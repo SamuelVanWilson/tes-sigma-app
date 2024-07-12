@@ -1,6 +1,27 @@
-html {
-    height: 100%;
-    width: 100%;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    text-transform: uppercase;
+}
+main {
+    position: relative;
+    perspective: 1000px;
+}
+main:hover #innerMain {
+    transform: rotateY(-180deg);
+}
+#innerMain {
+    position: absolute;
+    border: 1px solid;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+main > article {
+    position: absolute;
+    backface-visibility: hidden;
 }
 .bar {
     background-color: gray;
@@ -9,10 +30,7 @@ html {
     width: 200px;
 }
 #viewSigma {
-    display: none;
-}
-h1 {
-    text-transform: uppercase;
+    transform: rotateY(180deg);
 }
 .poinBar {
     background-color: orange;
