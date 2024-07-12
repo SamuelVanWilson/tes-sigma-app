@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+.bar {
+    background-color: gray;
+    border-radius: 20px;
+    height: 20px;
+    width: 200px;
+}
+#viewSigma {
+    display: none;
+}
+h1 {
+    text-transform: uppercase;
+}
+.poinBar {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 100%;
+    width: var(--poin-width, 0);
+    transition: 1s ease 0.3s;
+}
