@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function(){
     const viewPoinSigma = document.getElementById('viewSigma')
     const poinBars = document.querySelectorAll('.poinBar');
     const formUser = document.querySelector('form')
+    const jenisKepribadian = document.getElementById('persona')
     const originalValuesPoin = [];
+    let kepriBadianAsli;
     let nama;
     let intervalId;
 
@@ -43,12 +45,15 @@ document.addEventListener('DOMContentLoaded', function(){
             userData[nama] = originalValuesPoin;
             localStorage.setItem('userData', JSON.stringify(userData));
           }
-          document.getElementById('persona').textContent = randomPersona()
+          jenisKepribadian.textContent = randomPersona()
         }, 400);
 
       if(!intervalId) {
         intervalId = setInterval(function() {
           console.log('woi');
+          if (jenisKepribadian.innerText != kepriBadianAsli) {
+           jenisKepribadian.innerText = kepriBadianAsli 
+          }
           poinBars.forEach(function(poinBar, index) {
             const originalValue = originalValuesPoin[index];
             if (parseInt(poinBar.style.width) !== originalValue) {
@@ -98,8 +103,6 @@ document.addEventListener('DOMContentLoaded', function(){
     
     function randomPersona() {
       let karakter = []
-      console.log(originalValuesPoin[0]);
-      console.log(originalValuesPoin[1]);
       if ( originalValuesPoin[0] <= 20) {
         karakter.push('cringe kuadrat dikali jamet')
       } else if (originalValuesPoin[0] >= 20 && originalValuesPoin[0] <= 30) {
@@ -113,29 +116,29 @@ document.addEventListener('DOMContentLoaded', function(){
       } else if (originalValuesPoin[0] >= 70 && originalValuesPoin[0] <= 80) {
         karakter.push('rajin dan suka membantu orang')
       } else if (originalValuesPoin[0] >= 80 && originalValuesPoin[0] <= 90) {
+        karakter.push('manipulatif dan bikin ketar ketir')
+      }else {
+        karakter.push('sangat dihormatin dan rispek')
+      }
+      
+      if ( originalValuesPoin[4] <= 20) {
+        karakter.push('bocah akward')
+      } else if (originalValuesPoin[4] >= 20 && originalValuesPoin[4] <= 30) {
+        karakter.push('rada freak')
+      } else if (originalValuesPoin[4] >= 30 && originalValuesPoin[4] <= 50) {
+        karakter.push('normal')
+      } else if (originalValuesPoin[4] >= 50 && originalValuesPoin[4] <= 60) {
+        karakter.push('rapih dan wangi tapi umur 2 bulan thoriq udah haji')
+      } else if (originalValuesPoin[4] >= 60 && originalValuesPoin[4] <= 70) {
+        karakter.push('berwibawa')
+      } else if (originalValuesPoin[4] >= 70 && originalValuesPoin[4] <= 80) {
+        karakter.push('karismatik')
+      } else if (originalValuesPoin[4] >= 80 && originalValuesPoin[4] <= 90) {
         karakter.push('remaja generasi emas 2040')
       }else {
         karakter.push('the next presiden 2028')
       }
-      
-      if ( originalValuesPoin[1] <= 20) {
-        karakter.push('bocah akward')
-      } else if (originalValuesPoin[1] >= 20 && originalValuesPoin[1] <= 30) {
-        karakter.push('freak dan gak nyaman')
-      } else if (originalValuesPoin[1] >= 30 && originalValuesPoin[1] <= 50) {
-        karakter.push('normal')
-      } else if (originalValuesPoin[1] >= 50 && originalValuesPoin[1] <= 60) {
-        karakter.push('rapih dan wangi tapi thoriq umur 2 bulan dah haji')
-      } else if (originalValuesPoin[1] >= 60 && originalValuesPoin[1] <= 70) {
-        karakter.push('kangenin')
-      } else if (originalValuesPoin[1] >= 70 && originalValuesPoin[1] <= 80) {
-        karakter.push('karismatik')
-      } else if (originalValuesPoin[1] >= 80 && originalValuesPoin[0] <= 90) {
-        karakter.push('manipulatif dan bikin ketar ketir')
-      }else {
-        karakter.push(' sangat dihormatin dan rispek ')
-      }
-      console.log(karakter)
+      kepriBadianAsli = karakter.join(',')
       return karakter
     }
 })
