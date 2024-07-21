@@ -1,0 +1,126 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 22px;
+    padding-bottom: 4px;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(165, 165, 165, 0.575);
+}
+h1,h1 ~ p {
+    text-align: center;
+}
+h1 ~ p {
+    font-size: 14px;
+    margin-top: -18px;
+    margin-bottom: 18px;
+}
+main {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    position: relative;
+    padding: 10px 0;
+    border-radius: 10px;
+    perspective: 1000px;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              0 1px 3px rgba(0, 0, 0, 0.08);
+}
+main > article {
+    position: absolute;
+    backface-visibility: hidden;
+}
+.bar {
+    background-color: gray;
+    border-radius: 20px;
+    height: 20px;
+    width: 200px;
+}
+#inputForm {
+    transform: rotateY(0deg);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#inputForm img {
+    width: 100%;
+    margin-top: -60px;
+    border-radius: 0 0 10px 10px;
+}
+#inputForm form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border: 1px solid blue;
+    margin-top: 80px;
+    gap: 10px;
+}
+form input {
+    font-size: 13px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 1px solid rgba(163, 163, 163, 0.507);
+}
+form button {
+    padding: 8px 0;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+
+#viewSigma {
+    transform: rotateY(180deg);
+    padding: 0px 18px;
+    border: 1px solid;
+    display: none;
+    height: 100%;
+}
+#viewSigma p {
+    font-size: 15px;
+    font-weight: 600;
+}
+#viewSigma > section {
+    margin-top: -20px;
+}
+#viewSigma button {
+    padding: 7px 0;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 8px;
+    border: none;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+.poinBar {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    font-size: 12.5px;
+    align-items: center;
+    border-radius: 20px;
+    height: 100%;
+    width: var(--poin-width, 0);
+    transition: 1s ease 0.3s;
+}
+#persona {
+    font-size: 15px;
+}
+section img{
+    width: 30%;
+}
