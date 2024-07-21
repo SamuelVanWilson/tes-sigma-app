@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
       viewPoinSigma.style.setProperty('display', 'block')
       setTimeout(() => {
         document.querySelector('main').style.setProperty('transform', 'rotateY(-180deg)')
+        document.querySelector('main').style.setProperty('height', '95vh')
       }, 300);
         setTimeout(() => {
           formUser.style.setProperty('display', 'none')
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
             poinBar.style.width = 0 + '%' 
             poinBar.innerHTML = ''
           });
+          document.querySelector('main').style.setProperty('height', '85vh')
           viewPoinSigma.style.setProperty('display', 'none')
         }, 100);
       }, 300);
@@ -96,10 +98,12 @@ document.addEventListener('DOMContentLoaded', function(){
           let kemungkinan = Math.random();
           let poinAcak = Math.random();
           
-          if (kemungkinan < 0.65) {
+          if (kemungkinan < 0.40) {
           randomValue = 30 + Math.pow(poinAcak, 2) * 65;
-          } else {
+          } else if (kemungkinan >= 0.40 && kemungkinan <= 0.55) {
           randomValue = 17 + Math.sqrt(poinAcak) * 47;
+          } else {
+            randomValue = poinAcak * 100
           }
           randomValue = Math.floor(randomValue)
 
